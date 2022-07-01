@@ -7,9 +7,11 @@ import { instantiate } from "../lib/rs_lib.generated.js";
 
 export default function Home() {
   const run = async () => {
-    const { add } = await instantiate();
-    const result = add(1, 2);
-    console.log(result);
+    const { add, multiply } = await instantiate();
+    const addResult = add(1, 2);
+    console.log("addResult :", addResult);
+    const multiplyResult = multiply(2, 2);
+    console.log("multiplyResult :", multiplyResult);
   };
   run();
   return (
