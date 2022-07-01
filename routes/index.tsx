@@ -3,7 +3,15 @@ import { h } from "preact";
 import { tw } from "@twind";
 import Counter from "../islands/Counter.tsx";
 
+import { instantiate } from "../lib/rs_lib.generated.js";
+
 export default function Home() {
+  const run = async () => {
+    const { add } = await instantiate();
+    const result = add(1, 2);
+    console.log(result);
+  };
+  run();
   return (
     <div class={tw`p-4 mx-auto max-w-screen-md`}>
       <img
